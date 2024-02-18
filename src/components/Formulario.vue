@@ -65,9 +65,10 @@
             @submit.prevent="validar">
     
             <div class="mb-5">
-                <label for="mascota" class="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
-                <input id="mascota" type="text" placeholder="Nombre de la mascota"
+                <label for="nombre" class="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
+                <input id="nombre" type="text" placeholder="Nombre de la mascota"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    :value="nombre"
                     @input="$emit('update:nombre',$event.target.value)"
                     
                     >
@@ -76,6 +77,7 @@
                 <label for="propietario" class="block text-gray-700 uppercase font-bold">Nombre Propietario</label>
                 <input id="propietario" type="text" placeholder="Nombre del propietario"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    :value="propietario"
                     @input="$emit('update:propietario',$event.target.value)"
                                      >
             </div>
@@ -83,6 +85,7 @@
                 <label for="email" class="block text-gray-700 uppercase font-bold">Email</label>
                 <input id="email" type="text" placeholder="Email del propietario"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    :value="email"
                     @input="$emit('update:email',$event.target.value)"
                     
                     >
@@ -92,6 +95,7 @@
                 <label for="alta" class="block text-gray-700 uppercase font-bold">Alta</label>
                 <input id="alta" type="Date" class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                 @input="$emit('update:alta',$event.target.value)"
+                :value="alta"
                
                 >
             </div>
@@ -99,6 +103,7 @@
                 <label for="sintomas" class="block text-gray-700 uppercase font-bold">Síntomas</label>
                 <textarea id="sintomas" placeholder="Describe los sintomas "
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    :value="sintomas"
                     @input="$emit('update:sintomas',$event.target.value)"
                     
                     ></textarea>

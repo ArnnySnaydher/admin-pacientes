@@ -3,6 +3,7 @@ import { ref,reactive } from 'vue';
 import Header from './components/Header.vue';
 import Formulario from './components/Formulario.vue';
 import Paciente from './components/Paciente.vue'
+
 const pacientes = ref([])
 
 const paciente = reactive({
@@ -14,7 +15,23 @@ const paciente = reactive({
     })
 
     const guardarPaciente = () =>{
-      pacientes.value.push(paciente)
+      pacientes.value.push({...paciente})
+
+      //Reiniciar objeto
+      // paciente.nombre=''
+      // paciente.propietario=''
+      // paciente.email= ''
+      // paciente.alta= ''
+      // paciente.sintomas= ''
+
+      //other
+      Object.assign(paciente,{
+        nombre:'',
+        propietario:'',
+        email:'',
+        alta:'',
+        sintomas:''
+      })
     }
 </script>
 
