@@ -3,7 +3,10 @@
 
     const paciente = reactive({
         nombre:'',
-        propietario:''
+        propietario:'',
+        email:'',
+        alta:'',
+        sintomas:''
     })
 
 </script>
@@ -16,8 +19,7 @@
         </p>
 
         <form class="bg-white shadow-md rounded-lg py-10 px-5 mb-10">
-            {{ paciente.nombre }}
-            {{ paciente.propietario }}
+    
             <div class="mb-5">
                 <label for="mascota" class="block text-gray-700 uppercase font-bold">Nombre Mascota</label>
                 <input id="mascota" type="text" placeholder="Nombre de la mascota"
@@ -33,17 +35,20 @@
             <div class="mb-5">
                 <label for="email" class="block text-gray-700 uppercase font-bold">Email</label>
                 <input id="email" type="text" placeholder="Email del propietario"
-                    class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
+                    class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    v-model="paciente.email">
             </div>
 
             <div class="mb-5">
                 <label for="alta" class="block text-gray-700 uppercase font-bold">Alta</label>
-                <input id="alta" type="Date" class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
+                <input id="alta" type="Date" class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                v-model="paciente.alta">
             </div>
             <div class="mb-5">
                 <label for="sintomas" class="block text-gray-700 uppercase font-bold">Síntomas</label>
                 <textarea id="sintomas" placeholder="Describe los sintomas "
-                    class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"></textarea>
+                    class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                    v-model="paciente.sintomas"></textarea>
             </div>
 
             <input type="submit"
