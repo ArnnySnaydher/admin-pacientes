@@ -69,7 +69,7 @@
                 <input id="mascota" type="text" placeholder="Nombre de la mascota"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     @input="$emit('update:nombre',$event.target.value)"
-                    value="nombre"
+                    
                     >
             </div>
             <div class="mb-5">
@@ -77,14 +77,14 @@
                 <input id="propietario" type="text" placeholder="Nombre del propietario"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     @input="$emit('update:propietario',$event.target.value)"
-                    value="propietario"                    >
+                                     >
             </div>
             <div class="mb-5">
                 <label for="email" class="block text-gray-700 uppercase font-bold">Email</label>
                 <input id="email" type="text" placeholder="Email del propietario"
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     @input="$emit('update:email',$event.target.value)"
-                    value="email"
+                    
                     >
             </div>
 
@@ -92,7 +92,7 @@
                 <label for="alta" class="block text-gray-700 uppercase font-bold">Alta</label>
                 <input id="alta" type="Date" class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                 @input="$emit('update:alta',$event.target.value)"
-                value="alta"
+               
                 >
             </div>
             <div class="mb-5">
@@ -100,7 +100,7 @@
                 <textarea id="sintomas" placeholder="Describe los sintomas "
                     class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
                     @input="$emit('update:sintomas',$event.target.value)"
-                    value="sintomas"
+                    
                     ></textarea>
             </div>
 
