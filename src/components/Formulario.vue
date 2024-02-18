@@ -14,14 +14,13 @@
         sintomas:''
     })
 
-    const Validar =e=>{
+    const validar = ()=>{
         if(Object.values(paciente).includes('')){
             alerta.mensaje='Todos los campos son obligatorios'
             alerta.tipo = 'error'
             return
         }
 
-        console.log('despues')
 
         
     }
@@ -34,6 +33,7 @@
             Añade Pacientes y
             <span class="text-indigo-600 font-bold">Adminístralos</span>
         </p>
+        <Alerta v-if="alerta.mensaje" :alerta="alerta"></Alerta>
 
         <form class="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
             @submit.prevent="validar">
