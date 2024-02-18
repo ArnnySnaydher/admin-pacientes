@@ -48,6 +48,16 @@
         }
 
         emit('guardar-paciente')
+
+        alerta.mensaje='Paciente Alamacenado Correctamente'
+        alerta.tipo='exito'
+
+        setTimeout(() => {
+            Object.assign(alerta,{
+                tipo:'',
+                mensaje:''
+            })
+        }, 3000);
         
     }
 

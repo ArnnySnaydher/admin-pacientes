@@ -7,6 +7,7 @@ import Paciente from './components/Paciente.vue'
 const pacientes = ref([])
 
 const paciente = reactive({
+        id:null,
         nombre:'',
         propietario:'',
         email:'',
@@ -15,7 +16,7 @@ const paciente = reactive({
     })
 
     const guardarPaciente = () =>{
-      pacientes.value.push({...paciente})
+      pacientes.value.push({...paciente,id: self.crypto.randomUUID()})
 
       //Reiniciar objeto
       // paciente.nombre=''
