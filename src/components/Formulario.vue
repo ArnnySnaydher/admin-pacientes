@@ -7,7 +7,12 @@
         mensaje:''
     })
 
-    const emit = defineEmits(['update:nombre','update:propietario','update:email','update:alta','update:sintomas','guardar-paciente'])
+    const emit = defineEmits(['update:nombre',
+    'update:propietario',
+    'update:email',
+    'update:alta',
+    'update:sintomas',
+    'guardar-paciente'])
 
     const props = defineProps({
         id:{

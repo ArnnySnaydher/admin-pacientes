@@ -18,7 +18,7 @@ const paciente = reactive({
     const guardarPaciente = () =>{
       if (paciente.id) {
         const {id} = paciente
-        const i = pacientes.value.findIndex((pacienteState)=> pacienteState.id === id)
+        const i = pacientes.value.findIndex(paciente=> paciente.id === id)
         pacientes.value[i] = {...paciente};
       }else{
         pacientes.value.push({...paciente,id: self.crypto.randomUUID()})
@@ -47,6 +47,11 @@ const paciente = reactive({
       const pacienteEditar = pacientes.value.filter(paciente => paciente.id === id)[0]
       Object.assign(paciente,pacienteEditar)
     }
+
+    const eliminarPaciente=(id)=>{
+      pacientes.value = pacientes.value.filter(paciente=>paciente.id !== id)
+
+    }
 </script>
 
 <template>
@@ -70,7 +75,7 @@ const paciente = reactive({
             Información de
             <span class="text-indigo-600 font-bold">Pacientes</span>
         </p>
-        <Paciente v-for="paciente in pacientes" :paciente="paciente" @actualizar-paciente="actualizarPaciente"></Paciente>
+        <Paciente v-for="paciente in pacientes" :paciente="paciente" @actualizar-paciente="actualizarPaciente" @eliminar-paciente="eliminarPaciente"></Paciente>
       </div>
         <p v-else="" class="mt-20 text-2xl text-center">No hay Pacientes</p>
       </div>
